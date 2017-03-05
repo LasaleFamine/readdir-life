@@ -1,5 +1,4 @@
 import {join} from 'path';
-import {sleep} from 'sleep';
 import fs from 'fs-extra';
 import test from 'ava';
 import fn from './../src';
@@ -8,14 +7,17 @@ const resolvedPath = join(__dirname, 'data-test');
 const oldestFile = join(resolvedPath, 'oldest-modified-late.txt');
 const latestFolder = join(resolvedPath, 'latest');
 
+const wait = millisec => new Promise(resolve => setTimeout(() => resolve(), millisec));
+
 const preTest = async () => {
 	fs.ensureDirSync(resolvedPath);
 	fs.ensureFileSync(oldestFile);
-	sleep(1);
+	const timeout1 = await wait(2000);
+	clearTimeout(timeout1);
 	fs.ensureDirSync(latestFolder);
-	sleep(1);
+	const timeout2 = await wait(2000);
+	clearTimeout(timeout2);
 	fs.writeFileSync(oldestFile, 'test2');
-	Promise.resolve(true);
 };
 
 test.before(async () => {
