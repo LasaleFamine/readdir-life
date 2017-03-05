@@ -1,6 +1,6 @@
 # readdir-life
-[![GitHub tag](https://img.shields.io/github/release/lasalefamine/readdir-life.svg?style=flat-square)](https://github.com/LasaleFamine/readdir-life)
-[![Build Status](https://travis-ci.org/lasalefamine/readdir-life.svg?branch=master)](https://travis-ci.org/LasaleFamine/readdir-life?style=flat-square)
+[![GitHub release](https://img.shields.io/github/release/LasaleFamine/readdir-life.svg?style=flat-square)](https://github.com/LasaleFamine/readdir-life)
+[![Build Status](https://travis-ci.org/LasaleFamine/readdir-life.svg?branch=master&style=flat-square)](https://travis-ci.org/LasaleFamine/readdir-life)
 [![Coverage Status](https://coveralls.io/repos/github/LasaleFamine/readdir-life/badge.svg?branch=master)](https://coveralls.io/github/LasaleFamine/readdir-life?branch=master)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/LasaleFamine/readdir-life)
 [![npm](https://img.shields.io/npm/dt/readdir-life.svg?style=flat-square)](https://github.com/LasaleFamine/readdir-life)
