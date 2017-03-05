@@ -14,15 +14,15 @@ const preTest = async () => {
 	fs.ensureFileSync(oldestFile);
 	const timeout1 = await wait(2000);
 	console.log('Created file');
-	clearTimeout(timeout1);
 	fs.ensureDirSync(latestFolder);
 	const timeout2 = await wait(2000);
-	clearTimeout(timeout2);
 	console.log('Created folder');
 	const timeout3 = await wait(2000);
-	clearTimeout(timeout3);
 	fs.writeFileSync(oldestFile, 'test2');
 	console.log('Modified file');
+	clearTimeout(timeout2);
+	clearTimeout(timeout3);
+	clearTimeout(timeout1);
 };
 
 test.before(async () => {
@@ -35,7 +35,8 @@ test('get latest without type (fallback modified)', async t => {
 });
 
 test('get latest with type specified', async t => {
-	const res = await fn.latest(resolvedPath, 'birthtime');
+	const res = await fn.latest(resolvedPath, 'birthtime', 'latest created');
+	console.log(res);
 	t.is(res.file, 'latest');
 });
 
@@ -45,7 +46,8 @@ test('get oldest without type specified (fallback modified)', async t => {
 });
 
 test('get oldest with type specified', async t => {
-	const res = await fn.oldest(resolvedPath, 'birthtime');
+	const res = await fn.oldest(resolvedPath, 'birthtime', 'oldest created');
+	console.log(res);
 	t.is(res.file, 'oldest-modified-late.txt');
 });
 
