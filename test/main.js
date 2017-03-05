@@ -35,8 +35,7 @@ test('get latest without type (fallback modified)', async t => {
 });
 
 test('get latest with type specified', async t => {
-	const res = await fn.latest(resolvedPath, 'birthtime', 'latest created');
-	console.log(res);
+	const res = await fn.latest(resolvedPath, 'atime', 'latest created');
 	t.is(res.file, 'latest');
 });
 
@@ -46,8 +45,7 @@ test('get oldest without type specified (fallback modified)', async t => {
 });
 
 test('get oldest with type specified', async t => {
-	const res = await fn.oldest(resolvedPath, 'birthtime', 'oldest created');
-	console.log(res);
+	const res = await fn.oldest(resolvedPath, 'atime', 'oldest created');
 	t.is(res.file, 'oldest-modified-late.txt');
 });
 
