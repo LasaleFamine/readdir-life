@@ -1,0 +1,44 @@
+{
+  "name": "readdir-life",
+  "version": "1.0.0",
+  "description": "Check what are the oldest/latest files/folders within a directory",
+  "license": "MIT",
+  "main": "src/index.js",
+  "repository": "LasaleFamine/readdir-life",
+  "author": {
+    "name": "LasaleFamine",
+    "email": "info@godev.space",
+    "url": "godev.space"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "xo && nyc ava"
+  },
+  "keywords": [
+    "readdir",
+    "life-dir",
+    "directory",
+    "read-folder",
+    "folder",
+    "sort",
+    "files",
+    "asc",
+    "desc"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "coveralls": "^2.11.12",
+    "nyc": "^10.0.0",
+    "xo": "^0.17.0"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  }
+}
