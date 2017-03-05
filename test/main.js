@@ -13,11 +13,16 @@ const preTest = async () => {
 	fs.ensureDirSync(resolvedPath);
 	fs.ensureFileSync(oldestFile);
 	const timeout1 = await wait(2000);
+	console.log('Created file');
 	clearTimeout(timeout1);
 	fs.ensureDirSync(latestFolder);
 	const timeout2 = await wait(2000);
 	clearTimeout(timeout2);
+	console.log('Created folder');
+	const timeout3 = await wait(2000);
+	clearTimeout(timeout3);
 	fs.writeFileSync(oldestFile, 'test2');
+	console.log('Modified file');
 };
 
 test.before(async () => {
@@ -36,7 +41,6 @@ test('get latest with type specified', async t => {
 
 test('get oldest without type specified (fallback modified)', async t => {
 	const res = await fn.oldest(resolvedPath);
-
 	t.is(res.file, 'latest');
 });
 
