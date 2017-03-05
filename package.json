@@ -1,6 +1,6 @@
 {
   "name": "readdir-life",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Check what are the oldest/latest files/folders within a directory",
   "license": "MIT",
   "main": "src/index.js",
