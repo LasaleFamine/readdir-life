@@ -18,7 +18,7 @@ const preTest = async () => {
 	const timeout2 = await wait(2000);
 	console.log('Created folder');
 	const timeout3 = await wait(2000);
-	fs.writeFileSync(oldestFile, 'test2');
+	fs.appendFileSync(oldestFile, 'test2');
 	console.log('Modified file');
 	clearTimeout(timeout2);
 	clearTimeout(timeout3);
