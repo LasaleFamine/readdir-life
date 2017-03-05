@@ -22,6 +22,8 @@
     "life-dir",
     "directory",
     "read-folder",
+    "oldest",
+    "latest",
     "folder",
     "sort",
     "files",

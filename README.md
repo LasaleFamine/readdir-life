@@ -5,7 +5,7 @@
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/LasaleFamine/readdir-life)
 [![npm](https://img.shields.io/npm/dt/readdir-life.svg?style=flat-square)](https://github.com/LasaleFamine/readdir-life)
 
-> Check what are the oldest/latest files/folders within a directory
+> Check the oldest/latest files/folders within a directory
 
 
 
