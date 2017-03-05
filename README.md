@@ -21,7 +21,7 @@ $ yarn add readdir-life
 const {join} = require('path');
 const readdirLife = require('readdir-life');
 
-const pathResolved = path.join(__dirname, 'your-path');
+const pathResolved = join(__dirname, 'your-path');
 
 readdirLife.latest(pathResolved)
 	.then(res => console.log(res))
