@@ -21,7 +21,7 @@ $ yarn add readdir-life
 const {join} = require('path');
 const readdirLife = require('readdir-life');
 
-const pathResolved = path.join(__dirname, 'your-path');
+const pathResolved = join(__dirname, 'your-path');
 
 readdirLife.latest(pathResolved)
 	.then(res => console.log(res))
@@ -30,7 +30,7 @@ readdirLife.latest(pathResolved)
 /* =>
 
 {
-	file: 'latest-file-or-folder',
+	file: 'latest-file-or-folder-modified',
 	stat: {
 		dev: 16777220,
 		mode: 33188,
@@ -48,6 +48,33 @@ readdirLife.latest(pathResolved)
 		birthtime: 2017-03-05T01:29:06.000Z
 	}
 }
+*/
+
+readdirLife.sortLatest(pathResolved)
+	.then(res => console.log(res))
+	.catch(err => console.error(err));
+
+/* =>
+
+[{
+	file: 'latest-file-or-folder-modified',
+	stat: {
+		dev: 16777220,
+		mode: 33188,
+		nlink: 1,
+		uid: 501,
+		gid: 20,
+		rdev: 0,
+		blksize: 4096,
+		ino: 14889287,
+		size: 0,
+		blocks: 0,
+		atime: 2017-03-05T01:29:07.000Z,
+		mtime: 2017-03-05T01:29:16.000Z,
+		ctime: 2017-03-05T01:29:16.000Z,
+		birthtime: 2017-03-05T01:29:06.000Z
+	}
+}, {...}]
 */
 ```
 
@@ -73,6 +100,8 @@ Type of the time to check: `ctime|mtime|atime|birthtime`
 More info: [fs.Stats](https://nodejs.org/api/fs.html#fs_class_fs_stats)
 
 ### .oldest(input, [options])
+#### return
+Type: `object`
 
 #### input
 
@@ -90,10 +119,47 @@ Default: `mtime` // Modified time
 Type of the time to check: `ctime|mtime|atime|birthtime`
 More info: [fs.Stats](https://nodejs.org/api/fs.html#fs_class_fs_stats)
 
-## Todo
+### .sortLatest(input, [options])
+> From the latest to the oldest
+#### return
+Type: `array`
 
-- .sortAsc
-- .sortDesc
+#### input
+
+Type: `string`
+
+Directory to read.
+
+#### options
+
+##### typeTime
+
+Type: `string`<br>
+Default: `mtime` // Modified time
+
+Type of the time to check: `ctime|mtime|atime|birthtime`
+More info: [fs.Stats](https://nodejs.org/api/fs.html#fs_class_fs_stats)
+
+### .sortOldest(input, [options])
+> From the oldest to the latest
+#### return
+Type: `array`
+
+#### input
+
+Type: `string`
+
+Directory to read.
+
+#### options
+
+##### typeTime
+
+Type: `string`<br>
+Default: `mtime` // Modified time
+
+Type of the time to check: `ctime|mtime|atime|birthtime`
+More info: [fs.Stats](https://nodejs.org/api/fs.html#fs_class_fs_stats)
 
 ## Related
 - [fs.readdir](https://nodejs.org/api/fs.html#fs_fs_readdir_path_options_callback)

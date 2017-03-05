@@ -12,10 +12,28 @@ module.exports.latest = (dir, time) => {
 		});
 };
 
+module.exports.sortLatest = (dir, time) => {
+	return readDir(dir)
+		.then(list => sortLatestOldest(dir, list, 'last', time || 'mtime'))
+		.then(oldest => oldest || [])
+		.catch(err => {
+			throw err;
+		});
+};
+
 module.exports.oldest = (dir, time) => {
 	return readDir(dir)
 		.then(list => sortLatestOldest(dir, list, 'old', time || 'mtime'))
 		.then(oldest => oldest[0] || [])
+		.catch(err => {
+			throw err;
+		});
+};
+
+module.exports.sortOldest = (dir, time) => {
+	return readDir(dir)
+		.then(list => sortLatestOldest(dir, list, 'old', time || 'mtime'))
+		.then(oldest => oldest || [])
 		.catch(err => {
 			throw err;
 		});
