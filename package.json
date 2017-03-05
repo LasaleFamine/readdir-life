@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "test": "xo && nyc ava"
+    "test": "xo && nyc ava --serial"
   },
   "keywords": [
     "readdir",
@@ -32,6 +32,7 @@
   "devDependencies": {
     "ava": "^0.17.0",
     "coveralls": "^2.11.12",
+    "fs-extra": "^2.0.0",
     "nyc": "^10.0.0",
     "xo": "^0.17.0"
   },

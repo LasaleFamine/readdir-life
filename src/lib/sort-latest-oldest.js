@@ -15,7 +15,7 @@ module.exports = (dir, files, type, time) => {
 
 	return stats.sort((statA, statB) => {
 		return type === 'last' ?
-			statB.stat[time].getTime() > statA.stat[time].getTime() :
-			statA.stat[time].getTime() > statB.stat[time].getTime();
+			statB.stat[time].getTime() - statA.stat[time].getTime() :
+			statA.stat[time].getTime() - statB.stat[time].getTime();
 	});
 };
