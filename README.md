@@ -1,9 +1,9 @@
 # readdir-life
-[![GitHub tag](https://img.shields.io/github/release/lasalefamine/readdir-life.svg?style=flat-square)](https://github.com/lasalefamine/readdir-life)
-[![Build Status](https://travis-ci.org/lasalefamine/readdir-life.svg?branch=master)](https://travis-ci.org/lasalefamine/readdir-life?style=flat-square)
-[![Coverage Status](https://coveralls.io/repos/github/lasalefamine/readdir-life/badge.svg?branch=master)](https://coveralls.io/github/lasalefamine/readdir-life?branch=master)
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/lasalefamine/readdir-life)
-[![npm](https://img.shields.io/npm/dt/readdir-life.svg?style=flat-square)](https://github.com/lasalefamine/readdir-life)
+[![GitHub tag](https://img.shields.io/github/release/lasalefamine/readdir-life.svg?style=flat-square)](https://github.com/LasaleFamine/readdir-life)
+[![Build Status](https://travis-ci.org/lasalefamine/readdir-life.svg?branch=master)](https://travis-ci.org/LasaleFamine/readdir-life?style=flat-square)
+[![Coverage Status](https://coveralls.io/repos/github/LasaleFamine/readdir-life/badge.svg?branch=master)](https://coveralls.io/github/LasaleFamine/readdir-life?branch=master)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/LasaleFamine/readdir-life)
+[![npm](https://img.shields.io/npm/dt/readdir-life.svg?style=flat-square)](https://github.com/LasaleFamine/readdir-life)
 
 > Check what are the oldest/latest files/folders within a directory
 

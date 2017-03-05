@@ -14,8 +14,9 @@ module.exports = (dir, files, type, time) => {
 	}
 
 	return stats.sort((statA, statB) => {
+		const typeTime = time === 'birthtime' && statA.stat[time] === undefined ? 'ctime' : time;
 		return type === 'last' ?
-			statB.stat[time].getTime() - statA.stat[time].getTime() :
-			statA.stat[time].getTime() - statB.stat[time].getTime();
+			statB.stat[typeTime].getTime() - statA.stat[typeTime].getTime() :
+			statA.stat[typeTime].getTime() - statB.stat[typeTime].getTime();
 	});
 };
