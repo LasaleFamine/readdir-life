@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "test": "xo && nyc ava --serial"
+    "test": "xo && nyc ava"
   },
   "keywords": [
     "readdir",
@@ -34,6 +34,7 @@
     "coveralls": "^2.11.12",
     "fs-extra": "^2.0.0",
     "nyc": "^10.0.0",
+    "sleep": "^5.1.0",
     "xo": "^0.17.0"
   },
   "nyc": {
